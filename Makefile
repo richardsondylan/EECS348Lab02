@@ -11,7 +11,9 @@ prog: main.o isEven.o isOdd.o
 	$(CC) main.o isEven.o isOdd.o -o prog
 
 
-#main.o/isEven.o/isOdd.o are object files made by the compiler. They are exectuables yet.
+#main.o/isEven.o/isOdd.o are object files made by the compiler. They are not exectuables yet.
+# Adding the header files into the compiler command causing header files to be compiled as well,
+# this makes the directory more messy than necessary.
 main.o: main.c isEven.h isOdd.h
 		$(CC) $(CFLAGS) main.c
 
